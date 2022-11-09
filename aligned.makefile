@@ -10,7 +10,7 @@ include /cse142L/cse141pp-archlab/cse141.make
 $(BUILD)/run_tests.o: hidden_tests.cpp
 $(BUILD)/run_tests.o: CXX_STANDARD=-std=gnu++17
 
-run_tests.exe: $(BUILD)/run_tests.o $(BUILD)ChunkAlloc.o
+run_tests.exe: $(BUILD)/run_tests.o $(BUILD)/ChunkAlloc.o
 	$(CXX) $^ $(LDFLAGS) -L$(GOOGLE_TEST_ROOT)/lib -lgtest -lgtest_main  -o $@
 
 regressions.json: run_tests.exe
@@ -18,6 +18,7 @@ regressions.json: run_tests.exe
 
 autograde.csv: AlignedAllocator.hpp Allocator.cpp canary.cpp
 #	./lab_lint.py AlignedAllocator.hpp
+	cat AlignedAllocator.hpp
 	./run_bench.py --results $@ --source AlignedAllocator.hpp --optimize "-O3"
 	pretty-csv autograde.csv
 	rm -rf build run_tests.exe
