@@ -5,8 +5,11 @@
 #include<vector>
 #include<algorithm>
 #include"ReferenceAllocator.hpp"
+#if USE_INSTRUCTOR_SOLUTION == 1
+#include"admin/FastAllocator.hpp"
+#else
 #include"AlignedAllocator.hpp"
-
+#endif
 
 template<class Allocator>
 void exercise(Allocator * allocator, size_t count, int iterations, uint64_t seed, bool cleanup = false) {

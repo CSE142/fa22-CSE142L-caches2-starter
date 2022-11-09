@@ -148,7 +148,14 @@ struct tensor_t
 			];
 	}
 	// END_GET
-	
+
+	void clear() {
+		memset(
+		       data,
+		       0,
+		       calculate_data_size()
+		       );
+	}
 	static const int version = 1;
         static bool diff_prints_deltas;
 
