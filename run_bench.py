@@ -21,7 +21,7 @@ def run_bench(results_file=None,
     except:
         seed = 42
 
-    alloc = build(source, build_parameters=arg_map(OPTIMIZE=[optimize], MORE_SRC="canary.cpp Allocator.cpp ChunkAlloc.cpp"))
+    alloc = build(source, build_parameters=arg_map(OPTIMIZE=[optimize], MORE_SRC="canary.cpp Allocator.cpp ChunkAlloc.cpp"), rebuild=True)
 
     to_run = arg_map(executable=alloc,
                      function=["allocator_bench_solution"], 
