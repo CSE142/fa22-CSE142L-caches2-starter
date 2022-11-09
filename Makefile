@@ -15,6 +15,6 @@ NB_RELEASE_INCLUDES=/cse142L/labs/CSE141pp-Lab-Common -I .
 
 ENCRYPTED_FILES=hidden_tests.cpp autograde_seed
 STUDENT_EDITABLE_FILES=matexp_solution.hpp config.make
-PRIVATE_FILES=Lab.key.ipynb admin .git solution bad-solution Allocator_PA.key.ipynb $(ENCRYPTED_FILES) 
+PRIVATE_FILES=Lab.key.ipynb admin .git solution bad-solution Allocator_PA.key.ipynb Moneta_Demos.ipynb Demos.ipynb example $(ENCRYPTED_FILES)  
 
 include aligned.makefile
