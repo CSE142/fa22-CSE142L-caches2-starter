@@ -97,7 +97,7 @@ def compute_all_scores(dir=None):
         0.125,
         0.125
     ]
-    params = [(b, t, round(b/t*1.1, 2), w) for b, t, w in zip(baseline_ETs, target_ETs, weights)]
+    params = [(b, t, round(b/t*1.05, 2), w) for b, t, w in zip(baseline_ETs, target_ETs, weights)]
 
     params.append((6.16, 6.16, 1, 0)) # canary
 
