@@ -18,7 +18,6 @@ regressions.json: run_tests.exe
 
 autograde.csv: AlignedAllocator.hpp Allocator.cpp canary.cpp
 #	./lab_lint.py AlignedAllocator.hpp
-	cat AlignedAllocator.hpp
 	./run_bench.py --results $@ --source AlignedAllocator.hpp --optimize "-O3"
 	pretty-csv autograde.csv
 	rm -rf build run_tests.exe
