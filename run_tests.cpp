@@ -150,7 +150,7 @@ namespace Tests {
 				for(int i = 0; i < 10; i++) {
 					exercise(&alloc, count, iterations, s, true);
 					int allocated_chunks_end = get_allocated_chunks();
-					EXPECT_EQ(allocated_chunks_start, allocated_chunks_end) << "It looks like you are not recycling properly";
+					EXPECT_GE(allocated_chunks_start, allocated_chunks_end) << "It looks like you are not recycling properly";
 				}
 			}
 		}
